@@ -14,11 +14,6 @@ export class PipelineCdkStack extends Stack {
   constructor(scope: Construct, id: string, props: ConsumerProps) {
     super(scope, id, props);
 
-    /**const sourceRepo = new codecommit.Repository(this, 'CICD_Workshop', {
-      repositoryName: 'CICD_Workshop',
-      description: 'Repository for my application code and infrastructure',
-    });*/
-
     const pipeline = new codepipeline.Pipeline(this, 'Pipeline', {
       pipelineName: 'Pipeline',
       crossAccountKeys: false,
